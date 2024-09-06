@@ -12,13 +12,13 @@ preferred_number_of_private_subnets = 4
 
 environment = "dev"
 
-ami-web = "ami-0b1a83c8d7cf3ebd7"
+ami-web = "ami-08c595b196bf9f2b2"
 
-ami-bastion = "ami-0c794011cf050aae2"
+ami-bastion = "ami-011672c55bb538009"
 
-ami-nginx = "ami-0784adcd2654820d6"
+ami-nginx = "ami-0c9c60fd21ccf9a21"
 
-ami-sonar = "ami-088150ee21779bdd5"
+ami-sonar = "ami-0e223ce826e5c95bc"
 
 # ami_jenkins = "ami-088150ee21779bdd5"
 
