@@ -74,8 +74,8 @@ module "security" {
 }
 
 
-module "AutoScaling" {
-  source            = "./modules/AutoScaling"
+module "Autoscaling" {
+  source            = "./modules/Autoscaling"
   ami-web           = var.ami-web
   ami-bastion       = var.ami-bastion
   ami-nginx         = var.ami-nginx
