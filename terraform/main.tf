@@ -3,7 +3,7 @@
 #########################
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket        = "kydd-prod-terraform-bucket"
+  bucket        = "celyne-dev-terraform-bucket"
   force_destroy = true
 }
 
@@ -74,7 +74,7 @@ module "security" {
 }
 
 
-module "Autoscaling" {
+module "AutoScaling" {
   source            = "./modules/Autoscaling"
   ami-web           = var.ami-web
   ami-bastion       = var.ami-bastion
