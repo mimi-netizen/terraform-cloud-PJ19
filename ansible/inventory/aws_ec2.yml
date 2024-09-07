@@ -2,7 +2,7 @@ plugin: amazon.aws.aws_ec2
 aws_profile: default
 
 regions:
-  - "us-east-1"
+  - "eu-central-1"
 
 strict: False
 
@@ -12,10 +12,10 @@ keyed_groups:
 
 filters:
   tag:Name:
-    - fnc-bastion
-    - fnc-nginx
-    - fnc-tooling
-    - fnc-wordpress
+    - cdk-bastion
+    - cdk-nginx
+    - cdk-tooling
+    - cdk-wordpress
     # - fnc-sonarqube
     # - fnc-artifactory
     # - fnc-Jenkins
