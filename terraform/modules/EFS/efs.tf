@@ -1,5 +1,5 @@
 # create key from key management system
-resource "aws_kms_key" "CDK-kms" {
+resource "aws_kms_key" "Celyne-kms" {
   description = "KMS key "
   policy      = <<EOF
   {
@@ -21,18 +21,18 @@ EOF
 # create key alias
 resource "aws_kms_alias" "alias" {
   name          = "alias/kms"
-  target_key_id = aws_kms_key.CDK-kms.key_id
+  target_key_id = aws_kms_key.Celyne-kms.key_id
 }
 
 # create Elastic file system
-resource "aws_efs_file_system" "CDK-efs" {
+resource "aws_efs_file_system" "Celyne-efs" {
   encrypted  = true
-  kms_key_id = aws_kms_key.CDK-kms.arn
+  kms_key_id = aws_kms_key.Celyne-kms.arn
 
 tags = merge(
     var.tags,
     {
-      Name = "CDK-file-system"
+      Name = "Celyne-file-system"
     },
   )
 }
@@ -40,7 +40,7 @@ tags = merge(
 
 # set first mount target for the EFS 
 resource "aws_efs_mount_target" "subnet-1" {
-  file_system_id  = aws_efs_file_system.CDK-efs.id
+  file_system_id  = aws_efs_file_system.Celyne-efs.id
   subnet_id       = var.efs-subnet-1
   security_groups = var.efs-sg
 }
@@ -48,7 +48,7 @@ resource "aws_efs_mount_target" "subnet-1" {
 
 # set second mount target for the EFS 
 resource "aws_efs_mount_target" "subnet-2" {
-  file_system_id  = aws_efs_file_system.CDK-efs.id
+  file_system_id  = aws_efs_file_system.Celyne-efs.id
   subnet_id       = var.efs-subnet-2
   security_groups = var.efs-sg
 }
@@ -56,7 +56,7 @@ resource "aws_efs_mount_target" "subnet-2" {
 
 # create access point for wordpress
 resource "aws_efs_access_point" "wordpress" {
-  file_system_id = aws_efs_file_system.CDK-efs.id
+  file_system_id = aws_efs_file_system.Celyne-efs.id
 
   posix_user {
     gid = 0
@@ -79,7 +79,7 @@ resource "aws_efs_access_point" "wordpress" {
 
 # create access point for tooling
 resource "aws_efs_access_point" "tooling" {
-  file_system_id = aws_efs_file_system.CDK-efs.id
+  file_system_id = aws_efs_file_system.Celyne-efs.id
   posix_user {
     gid = 0
     uid = 0

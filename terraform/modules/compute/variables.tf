@@ -7,7 +7,7 @@ variable "ami-jenkins" {
 }
 variable "ami-jfrog" {
     type = string
-    description = "ami for jfrob"
+    description = "ami for jfrog"
 }
 variable "ami-sonar" {
     type = string
