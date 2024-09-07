@@ -16,9 +16,9 @@ filters:
     - cdk-nginx
     - cdk-tooling
     - cdk-wordpress
-    # - fnc-sonarqube
-    # - fnc-artifactory
-    # - fnc-Jenkins
+    # - cdk-sonarqube
+    # - cdk-artifactory
+    # - cdk-Jenkins
   instance-state-name: running
 
 hostnames:
