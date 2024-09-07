@@ -29,7 +29,6 @@ resource "aws_launch_template" "bastion-launch-template" {
       },
     )
   }
-
 }
 
 
@@ -64,6 +63,4 @@ resource "aws_launch_template" "nginx-launch-template" {
       },
     )
   }
-
-
 }

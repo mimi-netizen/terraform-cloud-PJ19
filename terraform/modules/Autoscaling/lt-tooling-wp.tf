@@ -29,8 +29,6 @@ resource "aws_launch_template" "wordpress-launch-template" {
       },
     )
   }
-
-
 }
 
 # launch template for toooling
@@ -63,7 +61,6 @@ resource "aws_launch_template" "tooling-launch-template" {
       },
     )
   }
-
 }
 
 
